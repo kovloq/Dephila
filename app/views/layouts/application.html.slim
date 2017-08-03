@@ -1,0 +1,118 @@
+doctype html
+html
+  head
+    meta charset="UTF-8" 
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title Dephila | Direktori hotel Indonesia
+    meta name="description" content="Layanan review hotel dan resto Indonesia Call: 08574784575 Email: contact@depila.com" 
+    meta name="keywords" content="Indonesia, hotel, cafe, resto,  wisata, kuliner, travel, event, promo" 
+    meta name="copyright" content="&copy; 2017 Dephila" 
+    meta property="og:url" content="http://www.dephila.com" 
+    meta property="og:title" content="Dephila | Direktori hotel Indonesia"
+    meta property="og:description" content="Layanan review hotel dan resto Indonesia Call: 08574784575 Email: contact@depila.com" 
+    meta property="og:image" content="http://www.dephila.com/images/logo.png" 
+    meta itemprop="name" content="Dephila"
+    meta itemprop="description" content="Dephila adalah layanan promosi hotel, cafe, resto, wisata promo dan event di Indonesia"
+    meta itemprop="image" content="/images/logo.png"
+    meta name="twitter:card" content="summary" 
+    meta name="twitter:site" content="@dephila" 
+    meta name="twitter:title" content="Dephila | Direktori hotel Indonesia" 
+    meta name="twitter:description" content="Layanan promosi hotel cafe, resto di Indonesia" 
+    meta name="twitter:image" content="/images/logo.png" 
+    meta name="twitter:url" content="http://www.dephila.com" 
+    link rel="shortcut icon" href="/images/favicon.ico"
+    == csrf_meta_tags
+
+    == stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' 
+    == javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    #preloader
+        #status &nbsp;
+        noscript JavaScript is off. Please enable to view full site.
+    #site
+        header id="header" class="wide-fat"
+            .container
+                div.col-xs-12.col-sm-2.no-margin
+                    .branding
+                        h1.site-title
+                            a href="#"
+                                img width="200" src="#{root_url}/images/logo.png" alt="Dephila"  
+                div.col-xs-12.col-sm-10.no-margin
+                    #main-menu
+                        nav.navigation
+                            ul.hidden-xs.hidden-sm.hidden-md
+                                li.menu-item.about-us 
+                                    a href="#" 
+                                        i.icon_house
+                                        | Home
+                                li.menu-item.hotel 
+                                    a href="#" 
+                                        i.icon_building
+                                        | Hotel
+                                li.menu-item.cafe 
+                                    a href="#" 
+                                        i.icon_camera
+                                        | Cafe n Resto
+                                li.menu-item.destinasi 
+                                    a href="#" 
+                                        i.icon_pin
+                                        | Wisata
+                                li.menu-item.promo 
+                                    a href="#" 
+                                        i.icon_calendar
+                                        | Promo
+                                li.menu-item.contact 
+                                    a href="#" 
+                                        i.icon_mail
+                                        | Kontak
+            .toggle-menu-holder
+                a.toggle-menu href="#"
+                .menu-body.closed
+                    ul
+                        li 
+                            a data-toggle="modal" data-target="#loginBox" href="#" 
+                                i class="fa fa-lock" 
+                                | login
+                        li 
+                            a href="#" 
+                                i class="fa fa-user"
+                                | register
+        
+        == yield
+        footer#footer-black.widefat
+            .container
+                .col-xs-12.col-md-4
+                    .footer-logo
+                        h1.site-title
+                            a href="#"
+                                img width="200" src="#{root_url}/images/logo.png" alt="Dephila" 
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                .col-xs-12.col-md-4
+                    .newsletter-holder
+                        h3 newsletter
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        input type="text" placeholder="Your Name"
+                        input type="text" placeholder="Your Email Address"
+                        input type="submit" class="button green" value="Subscribe Now"
+                .col-xs-12.col-md-4
+                    .newsletter-holder
+                        h3 contact info
+                        p Alamat disini
+                        ul.footer-social-icons
+                            li 
+                                a href="#" class="fa fa-facebook"
+                            li 
+                                a href="#" class="fa fa-twitter"
+
+                            li
+                                a href="#" class="fa fa-pinterest"
+
+                            li
+                                a href="#" class="fa fa-tumblr"
+
+                            li
+                                a href="#" class="fa fa-vimeo-square"
+    
+     
