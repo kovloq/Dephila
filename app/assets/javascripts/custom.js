@@ -296,8 +296,8 @@
             if ($('.star.big').length > 0) {
                 $('.star').raty({
                     space: false,
-                    starOff: 'images/star-big-off.png',
-                    starOn: 'images/star-big-on.png',
+                    starOff: '/images/star-big-off.png',
+                    starOn: '/images/star-big-on.png',
                     score: function () {
                         return $(this).attr('data-score');
                     }
@@ -305,8 +305,8 @@
             } else {
                 $('.star').raty({
                     space: false,
-                    starOff: 'images/star-off.png',
-                    starOn: 'images/star-on.png',
+                    starOff: '/images/star-off.png',
+                    starOn: '/images/star-on.png',
                     score: function () {
                         return $(this).attr('data-score');
                     }

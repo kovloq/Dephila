@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'hotel' , to: 'hotel#index'
 
-  get 'hotel/show'
+  get 'hotel/:id',to: 'hotel#show'
 
   get 'contact' , to: 'contact#index'
 

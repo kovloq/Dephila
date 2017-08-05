@@ -1,2 +1,82 @@
-<h1>Hotel#show</h1>
-<p>Find me in app/views/hotel/show.html.erb</p>
+section.page-head-holder
+    .container
+        .col-xs-6
+            h2 Hotel
+        .col-xs-6
+            .breadcrumb-holder
+                ol.breadcrumb
+                    li 
+                    	a href="#{root_url}" Home
+                    li 
+                    	a href="#{root_url}hotel" Hotel
+                    li.active
+                    	a href="#" Hotel 1
+.section.wide-fat.hotel-detail
+	.container
+		.col-xs-12.col-sm-8
+			.single-product-gallery
+				.single-slider-holder
+					.main-slide-nav
+						a.fa.fa-angle-left.prev-btn href="#" 
+						a.fa.fa-angle-right.next-btn href="#"
+					.single-slider
+						.hotel-detail-gallery-item#slider1
+							img src="#{root_url}images/01.jpg"
+						.hotel-detail-gallery-item#slider2
+							img src="#{root_url}images/02.jpg"
+					.single-slider-thumb-gallery
+						.nav-holder
+							a.fa.fa-angle-left.prev-btn href="#"
+							a.fa.fa-angle-right.next-btn href="#"
+						ul 
+							li
+							 	a.horizontal-gallery-item href="#slider1"
+							 		img src="#{root_url}images/01-small.jpg"
+							li
+							 	a.horizontal-gallery-item href="#slider2"
+							 		img src="#{root_url}images/02-small.jpg"
+			.tab-holder
+				ul.nav.nav-tabs
+					li.active
+						a href="#overview"  data-toggle="tab" overview
+					li
+						a href="#review" data-toggle="tab" review
+					li
+						a href="#articles" data-toggle="tab" articles
+					li
+						a href="#comment" data-toggle="tab" comment
+					li
+						a href="#map" data-toggle="tab" map
+					li
+						a href="#availability" data-toggle="tab" availability
+				.tab-content
+					.tab-pane.active#overview
+						p Test
+						h3 
+							a data-toggle="collapse" data-target="#bedroom" Bedroom
+                        #bedroom.collapse.in
+                            | Test 
+                    .tab-pane.active#review
+                    .tab-pane.active#articles
+                    .tab-pane.active#comment
+                    .tab-pane.active#map
+        .col-xs-12.col-sm-4
+        	.sidebar-holder
+        		article.entry-content
+        			.star-holder
+        				.star.big data-score="3"
+        		.widget-support.widget
+        			h2 Need a support
+        			ul
+        				li
+        					.lbl Telpon 
+        					.value 12345678
+        		.widget.recommended-hotels
+        			h2 Rekomendasi
+        			.hotel-lists
+        				ul
+        				 li.hotel-list-item
+        				 	a.thumbnailz.mini title="Hotel title"
+        				 		img 
+        				 		span.overlay
+
