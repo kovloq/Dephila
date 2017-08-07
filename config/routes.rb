@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'wisata' , to: 'wisata#index'
+
+  get 'wisata/:id' , to: 'wisata#show'
+
+  get 'resto' , to: 'resto#index'
+
+  get 'resto/:id' , to: 'resto#show'
+
   get 'hotel' , to: 'hotel#index'
 
   get 'hotel/:id',to: 'hotel#show'
