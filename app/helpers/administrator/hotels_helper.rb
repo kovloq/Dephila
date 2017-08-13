@@ -1,0 +1,2 @@
+module Administrator::HotelsHelper
+end

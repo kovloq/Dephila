@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :administrator do
+    resources :hotels
+  end
   get 'wisata' , to: 'wisata#index'
 
   get 'wisata/:id' , to: 'wisata#show'
