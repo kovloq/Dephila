@@ -1,8 +1,79 @@
 doctype html
 html
-  head
-    meta charset="UTF-8" 
-    link rel="shortcut icon" href="/images/favicon.ico"
-    == csrf_meta_tags
-    == stylesheet_link_tag    'dashboard', media: 'all', 'data-turbolinks-track': 'reload' 
-    == javascript_include_tag 'dashboard', 'data-turbolinks-track': 'reload'
+	head
+	    meta charset="utf-8"
+		meta http-equiv="X-UA-Compatible" content="IE=edge"
+		meta content="width=device-width  initial-scale=1" name="viewport"
+		meta content="Expense Manager" name="description"
+		meta content="Perdana Adhitama" name="author"
+		title Dephila
+		link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"
+	    == csrf_meta_tags
+	    == stylesheet_link_tag    'dashboard', media: 'all', 'data-turbolinks-track': 'reload' 
+	    == javascript_include_tag 'dashboard', 'data-turbolinks-track': 'reload'
+	    javascript:
+	    	jQuery(document).ready(function() {    
+		    Metronic.init(); // init metronic core components
+			Layout.init(); // init current layout
+	 		});
+	body.page-header-fixed.page-footer-fixed.page-container-bg-solid.page-sidebar-closed-hide-logo
+	.page-header.navbar.navbar-fixed-top
+		.page-header-inner
+		
+			.page-logo
+				a href="#"
+					== image_tag("logo.png", :width=>"100",:alt => "Logo",:class => "logo-default")
+				.menu-toggler.sidebar-toggler
+		
+			a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"
+			.page-top	
+				.top-menu
+					ul.nav.navbar-nav.pull-right					
+						li.dropdown.dropdown-user
+							a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"
+								img alt="" class="img-circle" src=""/
+								span.username.username-hide-on-mobile
+									= session[:admin_name] 
+								i.fa.fa-angle-down
+							ul.dropdown-menu.dropdown-menu-default
+								li
+									a href="extra_profile.html" 
+										i.icon-user My Profile
+								
+								li
+									- link_to({controller:"administrator/login",action:"logout"}) do 
+									i.icon-key
+									Log Out
+
+	.clearfix
+		.page-container
+			.page-sidebar-wrapper
+				.page-sidebar.navbar-collapse.collapse
+					ul class="page-sidebar-menu page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200"
+						li.start
+							= link_to('/administrator/', {:name => 'Dashboard',:title=>'Dashboard'}) do
+	                        	i.icon-home
+	                        	span.title Dashboard
+	                        
+						li
+							= link_to('/administrator/admin', {:name => 'Admin',:title=>'Admin'}) do
+		                        i.icon-user
+		                        span.title Admin
+						li
+							= link_to('/administrator/member', {:name => 'User',:title=>'User'}) do 
+		                        i.icon-user
+		                        span.title User
+						li
+							= link_to('/administrator/contact', {:name => 'News',:title=>'Contact'}) do
+		                        i.icon-calendar
+		                        span.title Contact
+	                        
+			.page-content-wrapper
+				.page-content
+					== yield
+		
+		.page-footer
+			.page-footer-inner
+				 | 2016 &copy; Created by: Dana.
+			.scroll-to-top
+				i.icon-arrow-up

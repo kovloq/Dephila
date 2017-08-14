@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   namespace :administrator do
+    get 'login/index'
+    get 'login/login'
+    get 'login/logout'
+  end
+  get "administrator", to: 'administrator/login#index'
+  
+  namespace :administrator do
     resources :hotels
   end
+  
   get 'wisata' , to: 'wisata#index'
 
   get 'wisata/:id' , to: 'wisata#show'
