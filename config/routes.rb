@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   namespace :administrator do
+    resources :news
+  end
+  namespace :administrator do
+    resources :contacts
+  end
+  namespace :administrator do
+    resources :admins
+  end
+  namespace :administrator do
     get 'login/index'
     get 'login/login'
     get 'login/logout'
