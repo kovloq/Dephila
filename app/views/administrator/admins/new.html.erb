@@ -1,5 +1,61 @@
-<h1>New Administrator Admin</h1>
 
-<%= render 'form', administrator_admin: @administrator_admin %>
+<h3 class="page-title">Admin</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <%= link_to "Home", :controller => "administrator/admin", :action => "index" %>
+            &nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+        </li>
+        <li>
+            <a href="#">Admin</a>
+            <i class="fa fa-angle-right"></i>
+            </li>
+        <li>
+        <a href="#">New</a>
+        </li>
+    </ul>
+</div>
 
-<%= link_to 'Back', administrator_admins_path %>
+
+<div class="portlet box green">
+	<div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-plus"></i>
+            New Admin
+        </div>
+    </div>
+							
+	                     	<div class="portlet-body form">
+	                     		<%= form_for @admin,url: {action: "create"} do |f| %>
+	                     		<div class="form-body">
+								  <div class="form-group" style="text-align:left">
+								    <label for="transaction_name" style="text-align:left">Name</label>
+								    <%= text_field(:admin, :name,class:"form-control",placeholder:"Name") %>
+								  </div>
+
+								  <div class="form-group" style="text-align:left">
+								    <label for="transaction_name" style="text-align:left">Username</label>
+								    <%= text_field(:admin, :username,class:"form-control",placeholder:"Username") %>
+								  </div>
+								  
+								  <div class="form-group">
+								    <label for="Email">Email</label>
+								    <%= email_field(:admin, :email,class:"form-control",placeholder:"Email") %>
+								    
+								  </div>
+
+								  <div class="form-group">
+								    <label for="Email">Password</label>
+								    <%= password_field(:admin, :password,class:"form-control",placeholder:"Password") %>
+								    
+								  </div>
+								</div>
+
+								  <div class="form-actions">
+								  	<input type="submit" class="btn green" value="Add"> 
+								  	<a href="#" class="btn back-cancel default">Cancel</a>
+								  </div>
+								<% end %>
+	                     	</div>
+</div>					
+						       
