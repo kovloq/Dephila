@@ -1,3 +1,3 @@
-class Administrator::Hotel
+class Hotel
   include Mongoid::Document
 end

@@ -9,7 +9,7 @@ class Administrator::LoginController < ApplicationController
   def login
   	username=params[:admin][:username];
   	password=Digest::SHA1.hexdigest(params[:admin][:password]);
-  	cek=Admin.where('username = ? AND password = ?',username , password).first()
+  	cek=Admin.where(username: username).where(password: password).first()
   	# puts cek.to_sql
   	if(cek)
   		session[:id_admin] = cek[:id]
@@ -30,4 +30,6 @@ class Administrator::LoginController < ApplicationController
   	session.delete(:admin_email);
   	redirect_to :controller => "administrator/login", :action => "index"
   end
+
+  
 end

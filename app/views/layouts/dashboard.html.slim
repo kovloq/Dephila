@@ -38,12 +38,12 @@ html
 							ul.dropdown-menu.dropdown-menu-default
 								li
 									a href="extra_profile.html" 
-										i.icon-user My Profile
+										i.icon-user  My Profile
 								
 								li
-									- link_to({controller:"administrator/login",action:"logout"}) do 
-									i.icon-key
-									Log Out
+									= link_to({controller:"administrator/login",action:"logout"}) do 
+										i.icon-key
+										| Log Out
 
 	.clearfix
 		.page-container
@@ -51,7 +51,7 @@ html
 				.page-sidebar.navbar-collapse.collapse
 					ul class="page-sidebar-menu page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200"
 						li.start
-							= link_to('/administrator/', {:name => 'Dashboard',:title=>'Dashboard'}) do
+							= link_to('/administrator/home', {:name => 'Dashboard',:title=>'Dashboard'}) do
 	                        	i.icon-home
 	                        	span.title Dashboard
 	                        

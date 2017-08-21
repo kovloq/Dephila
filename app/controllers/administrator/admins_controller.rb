@@ -29,7 +29,7 @@ class Administrator::AdminsController < AdministratorController
     params[:admin][:password]=Digest::SHA1.hexdigest(params[:admin][:password]);
     @admin = Admin.new(admin_params)
     if @admin.save
-        redirect_to :controller => "administrator/admin", :action => "index"
+        redirect_to :controller => "administrator/admins", :action => "index"
     else
       render :action => 'add'
     end
@@ -52,17 +52,14 @@ class Administrator::AdminsController < AdministratorController
      @admin=Admin.find params[:id]
       @admin.destroy
       flash[:success]="Deleted"
-      redirect_to :controller => "administrator/admin", :action => "index"
+      redirect_to :controller => "administrator/admins", :action => "index"
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_administrator_admin
-      @administrator_admin = Administrator::Admin.find(params[:id])
-    end
+   
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def administrator_admin_params
-      params.fetch(:administrator_admin, {})
+    def admin_params
+      params.require(:admin).permit(:username,:password,:name,:email)
     end
 end

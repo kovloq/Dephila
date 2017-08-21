@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+ 
+
   namespace :administrator do
     get 'login/index'
-    get 'login/login'
+    post 'login/login'
     get 'login/logout'
+    get 'home/index'
+    get 'home', to: 'home#index'
     resources :admins
     resources :contacts
     resources :news

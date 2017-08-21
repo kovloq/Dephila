@@ -1,3 +1,3 @@
-class Administrator::Contact
+class News
   include Mongoid::Document
 end

@@ -44,11 +44,11 @@
                                     <td><%= t.email %></td>
                                     
                                     <td>
-                                        <%= link_to "Edit",{:controller=>"administrator/admin",:action=>"edit",:id=>t.id},:class=>"btn btn-sm btn-warning" %>
+                                        <%= link_to "Edit",{:controller=>"administrator/admins",:action=>"edit",:id=>t.id},:class=>"btn btn-sm btn-warning" %>
 
                                         
                                     </td>
-                                    <td><%= link_to "Delete",{ :controller=>"administrator/admin",:action=>"destroy", :id=> t.id }, {:method => :delete,:class=>"btn btn-sm btn-danger",:data => {:confirm => 'Are you sure?'}} %></td>
+                                    <td><%= link_to "Delete",{ :controller=>"administrator/admins",:action=>"destroy", :id=> t.id }, {:method => :delete,:class=>"btn btn-sm btn-danger",:data => {:confirm => 'Are you sure?'}} %></td>
                                 </tr>
                     <% end %>
         </table>
