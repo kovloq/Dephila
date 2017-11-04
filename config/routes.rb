@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
- 
-
   namespace :administrator do
     get 'login/index'
     post 'login/login'
@@ -10,13 +8,13 @@ Rails.application.routes.draw do
     resources :admins
     resources :contacts
     resources :news
+    resources :hotels
+    resources :restaurants
+    resources :users
   end
   get "administrator", to: 'administrator/login#index'
   
-  namespace :administrator do
-    resources :hotels
-  end
-  
+  get 'promo' , to: 'promo#index'
   get 'wisata' , to: 'wisata#index'
 
   get 'wisata/:id' , to: 'wisata#show'

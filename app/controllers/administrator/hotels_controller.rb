@@ -1,10 +1,10 @@
 class Administrator::HotelsController < AdministratorController
-  before_action :set_administrator_hotel, only: [:show, :edit, :update, :destroy]
+  # before_action :set_administrator_hotel, only: [:show, :edit, :update, :destroy]
 
   # GET /administrator/hotels
   # GET /administrator/hotels.json
   def index
-    @administrator_hotels = Administrator::Hotel.all
+    @administrator_hotels = Hotel.all
   end
 
   # GET /administrator/hotels/1
@@ -14,7 +14,7 @@ class Administrator::HotelsController < AdministratorController
 
   # GET /administrator/hotels/new
   def new
-    @administrator_hotel = Administrator::Hotel.new
+    @administrator_hotel = Hotel.new
   end
 
   # GET /administrator/hotels/1/edit
@@ -24,7 +24,7 @@ class Administrator::HotelsController < AdministratorController
   # POST /administrator/hotels
   # POST /administrator/hotels.json
   def create
-    @administrator_hotel = Administrator::Hotel.new(administrator_hotel_params)
+    @administrator_hotel = Hotel.new(administrator_hotel_params)
 
     respond_to do |format|
       if @administrator_hotel.save
@@ -64,7 +64,7 @@ class Administrator::HotelsController < AdministratorController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_administrator_hotel
-      @administrator_hotel = Administrator::Hotel.find(params[:id])
+      @administrator_hotel = Hotel.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

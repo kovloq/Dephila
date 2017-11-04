@@ -1,6 +1,45 @@
-<h1>Editing Administrator Contact</h1>
+<h3 class="page-title">News</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <%= link_to "Home", :controller => "administrator/home", :action => "index" %>
+            &nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+        </li>
+        <li>
+            <%= link_to "Contacts", :controller => "administrator/contacts", :action => "index" %>
+            <i class="fa fa-angle-right"></i>
+            </li>
+        <li>
+        <a href="javascript:void(0)">Show</a>
+        </li>
+    </ul>
+</div>
 
-<%= render 'form', administrator_contact: @administrator_contact %>
 
-<%= link_to 'Show', @administrator_contact %> |
-<%= link_to 'Back', administrator_contacts_path %>
+<div class="portlet box green">
+	<div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-phone"></i>
+            Contact
+        </div>
+    </div>
+
+
+	<div class="portlet-body">
+		<table class="table">
+			<tr>
+				<th>Subject</th><td><%= @contact.subject %></td>
+			</tr>
+			<tr>
+				<th>Name</th><td><%= @contact.name %></td>
+			</tr>	
+			<tr>
+				<th>Email</th><td><%= @contact.email %></td>
+			</tr>
+			<tr>
+				<th>Message</th><td><%= @contact.message %></td>
+			</tr>
+		</table>
+	</div>
+</div>
+

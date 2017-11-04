@@ -17,4 +17,5 @@
 //= require bootstrap.min
 //= require bootstrap-hover-dropdown.min
 //= require metronic
+//= require summernote
 //= require layout

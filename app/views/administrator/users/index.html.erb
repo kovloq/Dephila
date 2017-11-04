@@ -1,0 +1,46 @@
+<h3 class="page-title">User</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <%= link_to "Home", :controller => "administrator/users", :action => "index" %>
+            &nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+        </li>
+        
+        <li>
+        <a href="#">User</a>
+        </li>
+    </ul>
+</div>
+
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="icon-user "></i>
+            <span class="caption-subject bold uppercase">User List</span>
+            
+        </div>
+        <div class="actions">
+            <%= link_to('/administrator/users/new', {:name => 'New User',:title=>'New User',:class=>"btn btn-circle btn-primary"}) do %>
+                <i class="fa fa-plus"></i>
+                <span class="hidden-480">New</span>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="portlet-body"><!-- Begin body -->
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+                            
+                            
+        </table>
+   
+        
+    
+    </div><!-- End Body -->
+</div><!-- End Portlet -->

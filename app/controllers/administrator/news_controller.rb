@@ -1,74 +1,59 @@
 class Administrator::NewsController < AdministratorController
-  before_action :set_administrator_news, only: [:show, :edit, :update, :destroy]
+  # before_action :set_administrator_news, only: [:show, :edit, :update, :destroy]
 
   # GET /administrator/news
   # GET /administrator/news.json
   def index
-    @administrator_news = Administrator::News.all
+    @news = News.all
   end
 
-  # GET /administrator/news/1
-  # GET /administrator/news/1.json
   def show
+    @news = News.find params[:id]
   end
 
-  # GET /administrator/news/new
-  def new
-    @administrator_news = Administrator::News.new
-  end
-
-  # GET /administrator/news/1/edit
   def edit
+    @news = News.find params[:id]
   end
 
-  # POST /administrator/news
-  # POST /administrator/news.json
+  def new 
+  	@news=News.new
+  end
+
   def create
-    @administrator_news = Administrator::News.new(administrator_news_params)
-
-    respond_to do |format|
-      if @administrator_news.save
-        format.html { redirect_to @administrator_news, notice: 'News was successfully created.' }
-        format.json { render :show, status: :created, location: @administrator_news }
-      else
-        format.html { render :new }
-        format.json { render json: @administrator_news.errors, status: :unprocessable_entity }
-      end
+    @news = News.new(news_params)
+    if @news.save
+        redirect_to :controller => "administrator/news", :action => "index"
+    else
+      render :action => 'add'
     end
   end
 
-  # PATCH/PUT /administrator/news/1
-  # PATCH/PUT /administrator/news/1.json
+  # PATCH/PUT /administrator/admins/1
+  # PATCH/PUT /administrator/admins/1.json
   def update
-    respond_to do |format|
-      if @administrator_news.update(administrator_news_params)
-        format.html { redirect_to @administrator_news, notice: 'News was successfully updated.' }
-        format.json { render :show, status: :ok, location: @administrator_news }
-      else
-        format.html { render :edit }
-        format.json { render json: @administrator_news.errors, status: :unprocessable_entity }
-      end
+    @news = News.find(params[:id])
+    if @news.update_attributes(params[:news])
+      redirect_to :action => 'edit', :id => params[:id]
+    else
+      render :action => 'edit'
     end
   end
 
-  # DELETE /administrator/news/1
-  # DELETE /administrator/news/1.json
+  # DELETE /administrator/admins/1
+  # DELETE /administrator/admins/1.json
   def destroy
-    @administrator_news.destroy
-    respond_to do |format|
-      format.html { redirect_to administrator_news_index_url, notice: 'News was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     @news=News.find params[:id]
+      @news.destroy
+      flash[:success]="Deleted"
+      redirect_to :controller => "administrator/news", :action => "index"
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_administrator_news
-      @administrator_news = Administrator::News.find(params[:id])
-    end
+   
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def administrator_news_params
-      params.fetch(:administrator_news, {})
+    def news_params
+      params.require(:news).permit(:title,:content)
     end
+
 end

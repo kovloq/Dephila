@@ -16,5 +16,6 @@
  *= require components
  *= require plugins
  *= require layout
+ *= require summernote
  *= require default
  */
